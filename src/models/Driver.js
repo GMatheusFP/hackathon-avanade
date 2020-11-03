@@ -1,6 +1,6 @@
 const Drivers = (sequelize, dataTypes) => {
   const model = sequelize.define(
-    'Drivers',
+    'Driver',
     {
       id: {
         type: dataTypes.INTEGER,
@@ -22,11 +22,11 @@ const Drivers = (sequelize, dataTypes) => {
       },
     },
     {
-      tableName: 'drivers',
+      tableName: 'driver',
     },
   );
 
   return model;
 };
 
-module.exports = Drivers;
+module.exports = Driver;
