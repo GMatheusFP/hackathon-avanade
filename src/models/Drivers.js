@@ -1,6 +1,6 @@
-const Client = (sequelize, dataTypes) => {
+const Drivers = (sequelize, dataTypes) => {
   const model = sequelize.define(
-    'Client',
+    'Drivers',
     {
       id: {
         type: dataTypes.INTEGER,
@@ -12,13 +12,21 @@ const Client = (sequelize, dataTypes) => {
         type: dataTypes.STRING,
         allowNull: false,
       },
+      board: {
+        type: dataTypes.STRING,
+        allowNull: false,
+      },
+      model: {
+        type: dataTypes.STRING,
+        allowNull: false,
+      },
     },
     {
-      tableName: 'client',
+      tableName: 'drivers',
     },
   );
 
   return model;
 };
 
-module.exports = Client;
+module.exports = Drivers;
