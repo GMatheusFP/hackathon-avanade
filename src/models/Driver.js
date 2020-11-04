@@ -1,4 +1,4 @@
-const Drivers = (sequelize, dataTypes) => {
+const Driver = (sequelize, dataTypes) => {
   const model = sequelize.define(
     'Driver',
     {

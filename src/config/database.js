@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-expressions
 require('dotenv').config;
 
 module.exports = {
@@ -6,5 +7,5 @@ module.exports = {
   port: process.env.DB_PORT,
   database: process.env.DB_DATABASE,
   host: process.env.DB_HOST,
-  dialect: process.env.DB_DIALECT
+  dialect: process.env.DB_DIALECT,
 };
