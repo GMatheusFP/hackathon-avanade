@@ -7,8 +7,6 @@ const Client = require('../models/Client');
 const connection = new Sequelize(ConfigDatabase);
 
 const ClientController = {
-  //   async index(req, res) {},
-  //   show(req, res) {},
   async store(req, res) {
     const { name, email } = req.body;
     const now = new Date();
@@ -35,13 +33,11 @@ const ClientController = {
   },
   update(req, res) {
     const { id } = req.params;
-    const { name, email, board, model } = res.body;
+    const { name, email } = res.body;
     const [clientUpdate] = Client.update(
       {
         name,
         email,
-        board,
-        model,
       },
       { where: { id } },
     );

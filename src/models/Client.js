@@ -1,5 +1,5 @@
-const Client = (sequelize, dataTypes) => {
-  const model = sequelize.define(
+module.exports = (sequelize, dataTypes) => {
+  const Client = sequelize.define(
     'Client',
     {
       id: {
@@ -18,7 +18,9 @@ const Client = (sequelize, dataTypes) => {
     },
   );
 
-  return model;
-};
+  Client.associate = (models) => {
+    Client.hasMany(models.Running, { foreignKey: 'client_id' });
+  };
 
-module.exports = Client;
+  return Client;
+};

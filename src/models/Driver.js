@@ -1,5 +1,5 @@
-const Driver = (sequelize, dataTypes) => {
-  const model = sequelize.define(
+module.exports = (sequelize, dataTypes) => {
+  const Driver = sequelize.define(
     'Driver',
     {
       id: {
@@ -26,7 +26,9 @@ const Driver = (sequelize, dataTypes) => {
     },
   );
 
-  return model;
-};
+  Driver.associate = (models) => {
+    Driver.hasMany(models.Running, { foreignKey: 'driver_id' });
+  };
 
-module.exports = Driver;
+  return Driver;
+};
